@@ -1,0 +1,10 @@
+{
+  "name": "veune-studio-portfolio",
+  "version": "1.0.0",
+  "description": "Modern, naturistic portfolio website for Veune Studio by Vanessa Kinya, built with HTML, CSS3, and vanilla JavaScript.",
+  "private": true,
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
+

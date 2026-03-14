@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veune Cour · Portfolio by Vanessa Kinya</title>
+    <meta
+      name="description"
+      content="Veune Studio – a modern, naturistic, and interactive portfolio by creative developer & designer Vanessa Kinya."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fraunces:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-orbit"></div>
+    <div class="leaf leaf--one"></div>
+    <div class="leaf leaf--two"></div>
+    <div class="leaf leaf--three"></div>
+
+    <header class="site-header" id="home">
+      <div class="site-header__inner">
+        <a href="#home" class="brand">
+          <span class="brand__icon">V</span>
+          <span class="brand__text">
+            <span class="brand__title">Veune Cour</span>
+            <span class="brand__subtitle">by Vanessa Kinya</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+        </button>
+
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link nav__link--active">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Projects</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
+          <div class="nav__indicator"></div>
+        </nav>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle__icon theme-toggle__icon--sun"></span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon"></span>
+          <span class="theme-toggle__thumb"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">
+            Naturistic, playful interfaces
+            <span class="hero__accent">for tech‑savvy brands.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Veune Cour blends soft pastels, organic motion, and thoughtful UX
+            to craft digital experiences that feel alive.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View Projects</a>
+            <a href="#contact" class="btn btn--ghost">Work with Vanessa</a>
+          </div>
+          <div class="hero__meta">
+            <span class="hero__pill">UX · UI · Frontend</span>
+            <span class="hero__pill hero__pill--soft">Interactive storytelling</span>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero-orbit hero-orbit--back"></div>
+          <div class="hero-orbit hero-orbit--middle"></div>
+          <div class="hero-orbit hero-orbit--front"></div>
+          <div class="hero-avatar js-parallax" data-depth="0.1">
+            <div class="hero-avatar__halo"></div>
+            <div class="hero-avatar__circle">
+              <span class="hero-avatar__initials">VK</span>
+            </div>
+            <span class="hero-avatar__badge">Available · 2026</span>
+          </div>
+          <div
+            class="hero-card js-parallax"
+            data-depth="0.25"
+          >
+            <p class="hero-card__label">Featured project</p>
+            <p class="hero-card__title">Forest Flow Dashboard</p>
+            <p class="hero-card__meta">Data‑rich UI, delightfully calm.</p>
+          </div>
+          <div
+            class="hero-tag hero-tag--one js-parallax"
+            data-depth="0.35"
+          >
+            <span>3D micro‑interactions</span>
+          </div>
+          <div
+            class="hero-tag hero-tag--two js-parallax"
+            data-depth="0.45"
+          >
+            <span>Pastel nature palettes</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--alt"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section__header">
+          <h2 id="projects-title" class="section__title">Projects</h2>
+          <p class="section__subtitle">
+            A curated selection of digital gardens cultivated at Veune Cour.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article
+            class="project-card js-project-card js-reveal"
+            data-project="forest-flow"
+          >
+            <div class="project-card__inner">
+              <div class="project-card__glow"></div>
+              <h3 class="project-card__title">Serenity Gym</h3>
+              <p class="project-card__tagline">
+                Calm analytics for climate‑first teams.
+              </p>
+              <ul class="project-card__meta">
+                <li>Real‑time data visualisation</li>
+                <li>Ambient leaf animations</li>
+                <li>Dark & light modes</li>
+              </ul>
+              <button class="project-card__toggle" type="button">
+                Details
+                <span class="project-card__toggle-icon">+</span>
+              </button>
+              <div class="project-card__details">
+                <p>
+                  Designed an analytics dashboard for environmental NGOs with a
+                  focus on clarity and emotional calm. Subtle parallax leaves
+                  respond to scroll, while cards tilt in 3D as users explore
+                  metrics.
+                </p>
+                <p class="project-card__stack">
+                  HTML · CSS · Vanilla JS · SVG
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project-card js-project-card js-reveal"
+            data-project="sprout-commerce"
+          >
+            <div class="project-card__inner">
+              <div class="project-card__glow"></div>
+              <h3 class="project-card__title">Veune Spa</h3>
+              <p class="project-card__tagline">
+                A playful shop for eco‑friendly goods.
+              </p>
+              <ul class="project-card__meta">
+                <li>Responsive product grid</li>
+                <li>Floating add‑to‑cart CTAs</li>
+                <li>Story‑driven product pages</li>
+              </ul>
+              <button class="project-card__toggle" type="button">
+                Details
+                <span class="project-card__toggle-icon">+</span>
+              </button>
+              <div class="project-card__details">
+                <p>
+                  Crafted a browsing experience that feels like wandering
+                  through a sunlit market. Cards bloom open on tap, revealing
+                  rich product stories and impact stats without overwhelming
+                  the user.
+                </p>
+                <p class="project-card__stack">
+                  HTML · CSS Grid · JS micro‑interactions
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="project-card js-project-card js-reveal"
+            data-project="canopy-portfolio"
+          >
+            <div class="project-card__inner">
+              <div class="project-card__glow"></div>
+              <h3 class="project-card__title">Canopy Stories</h3>
+              <p class="project-card__tagline">
+                Narrative portfolio for an illustrator.
+              </p>
+              <ul class="project-card__meta">
+                <li>Scroll‑linked storytelling</li>
+                <li>Layered parallax scenes</li>
+                <li>Gentle character motions</li>
+              </ul>
+              <button class="project-card__toggle" type="button">
+                Details
+                <span class="project-card__toggle-icon">+</span>
+              </button>
+              <div class="project-card__details">
+                <p>
+                  Built an immersive scroll journey where each chapter unfolds
+                  like turning a page under a tree canopy. Motion is used
+                  sparingly to preserve focus on the artwork.
+                </p>
+                <p class="project-card__stack">
+                  Semantic HTML · CSS transforms · JS scroll triggers
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section__header">
+          <h2 id="about-title" class="section__title">About Vanessa</h2>
+          <p class="section__subtitle">
+            The curious mind and steady hands behind Veune Studio.
+          </p>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-layout__story js-reveal">
+            <p>
+              Vanessa Kinya is a frontend developer and visual storyteller who
+              loves weaving nature‑inspired motion into modern interfaces. Her
+              work balances technical polish with soft, welcoming aesthetics.
+            </p>
+            <p>
+              At Veune Cour, Vanessa partners with eco‑friendly brands,
+              creators, and founders to build digital spaces that feel like
+              calm clearings in a noisy web — places where stories can breathe
+              and users feel gently guided.
+            </p>
+            <p>
+              When she is not designing interfaces, you will find her sketching
+              foliage in the margins of notebooks, tweaking color palettes, or
+              experimenting with new micro‑interaction patterns.
+            </p>
+          </div>
+          <aside class="about-layout__highlights js-reveal" aria-label="Highlights">
+            <ul class="about-highlights">
+              <li class="about-highlights__item">
+                <span class="about-highlights__label">Focus</span>
+                <span class="about-highlights__value">UX, UI, Frontend</span>
+              </li>
+              <li class="about-highlights__item">
+                <span class="about-highlights__label">Style</span>
+                <span class="about-highlights__value">Pastel, naturistic, playful</span>
+              </li>
+              <li class="about-highlights__item">
+                <span class="about-highlights__label">Based in</span>
+                <span class="about-highlights__value">Remote · Open to global</span>
+              </li>
+              <li class="about-highlights__item">
+                <span class="about-highlights__label">Available for</span>
+                <span class="about-highlights__value">2026 collaborations</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section
+        class="section section--alt"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="section__header">
+          <h2 id="contact-title" class="section__title">Let&apos;s create together</h2>
+          <p class="section__subtitle">
+            Share a glimpse of your idea — Veune Cour will help it grow.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <form class="contact-form js-contact-form js-reveal" novalidate>
+            <div class="contact-form__row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <div class="field__wrapper">
+                  <input
+                    class="field__input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                  <span class="field__underline"></span>
+                </div>
+                <p class="field__error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <div class="field__wrapper">
+                  <input
+                    class="field__input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                  <span class="field__underline"></span>
+                </div>
+                <p class="field__error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="projectType">Project type</label>
+              <div class="field__wrapper">
+                <select
+                  class="field__input field__input--select"
+                  id="projectType"
+                  name="projectType"
+                  required
+                >
+                  <option value="">Select one...</option>
+                  <option value="portfolio">Personal portfolio</option>
+                  <option value="product">Product website</option>
+                  <option value="dashboard">Dashboard / web app UI</option>
+                  <option value="branding">Brand & experience refresh</option>
+                  <option value="other">Something different</option>
+                </select>
+                <span class="field__underline"></span>
+              </div>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="message">Project story</label>
+              <div class="field__wrapper">
+                <textarea
+                  class="field__input field__input--textarea"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+                <span class="field__underline"></span>
+              </div>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+
+            <div class="contact-form__footer">
+              <button class="btn btn--primary" type="submit">
+                Send message
+                <span class="btn__sparkle" aria-hidden="true"></span>
+              </button>
+              <p class="contact-form__note">
+                You&apos;ll receive a friendly reply within 2–3 business days.
+              </p>
+            </div>
+            <p class="contact-form__status" aria-live="polite"></p>
+          </form>
+
+          <aside
+            class="contact-aside js-reveal"
+            aria-label="Alternative contact options"
+          >
+            <p class="contact-aside__text">
+              Prefer a quick hello? I'm just a click away:
+            </p>
+            <div class="social-links">
+              <a
+                class="social-links__item"
+                href="mailto:hello@veunestudio.com"
+                aria-label="Email Vanessa"
+              >
+                <span class="social-links__icon social-links__icon--mail"></span>
+                <span class="social-links__label">Email</span>
+              </a>
+              <a
+                class="social-links__item"
+                href="https://wa.me/message/FA5BCTXK3FLRN1"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Chat on WhatsApp"
+              >
+                <span
+                  class="social-links__icon social-links__icon--whatsapp"
+                ></span>
+                <span class="social-links__label">WhatsApp</span>
+              </a>
+              <a
+                class="social-links__item"
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View GitHub profile"
+              >
+                <span
+                  class="social-links__icon social-links__icon--github"
+                ></span>
+                <span class="social-links__label">GitHub</span>
+              </a>
+              <a
+                class="social-links__item"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View LinkedIn profile"
+              >
+                <span
+                  class="social-links__icon social-links__icon--linkedin"
+                ></span>
+                <span class="social-links__label">LinkedIn</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-story">
+          <div class="footer-story__scene">
+            <div class="footer-tree footer-tree--left"></div>
+            <div class="footer-tree footer-tree--right"></div>
+            <div class="footer-firefly footer-firefly--one"></div>
+            <div class="footer-firefly footer-firefly--two"></div>
+            <div class="footer-firefly footer-firefly--three"></div>
+          </div>
+          <div class="footer-story__text">
+            <p>
+              Every interface at Veune Studio starts as a tiny seed of an idea.
+              With care, color, and code, Vanessa nurtures it into a calm
+              digital clearing where your story can glow.
+            </p>
+          </div>
+        </div>
+        <div class="site-footer__meta">
+          <p class="site-footer__credit">
+            © <span id="year"></span> Veune Studio · Crafted by Vanessa Kinya
+          </p>
+          <p class="site-footer__smallprint">
+            Built with semantic HTML, modern CSS, and vanilla JavaScript.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
