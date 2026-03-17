@@ -221,6 +221,7 @@
     projectCards.forEach((card) => {
       const inner = qs(".project-card__inner", card);
       const toggle = qs(".project-card__toggle", card);
+      const projectLink = qs(".project-card__link", card);
       if (!inner || !toggle) return;
 
       const maxTilt = 10;
@@ -253,6 +254,10 @@
       toggle.addEventListener("click", (event) => {
         event.stopPropagation();
         toggleExpanded();
+      });
+
+      projectLink?.addEventListener("click", (event) => {
+        event.stopPropagation();
       });
 
       inner.addEventListener("click", () => {
@@ -316,7 +321,7 @@
       return true;
     };
 
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (statusEl) {
         statusEl.textContent = "";
@@ -341,13 +346,64 @@
         return;
       }
 
-      if (statusEl) {
-        statusEl.textContent =
-          "Thank you for reaching out! Vanessa will respond soon.";
-        statusEl.classList.add("contact-form__status--success");
-      }
+      const submitButton = qs('button[type="submit"]', contactForm);
+      submitButton?.setAttribute("disabled", "true");
 
-      contactForm.reset();
+      try {
+        const endpoint = contactForm.getAttribute("action")?.trim();
+        const method = (contactForm.getAttribute("method") || "POST").toUpperCase();
+
+        if (!endpoint || endpoint === window.location.href) {
+          const name = qs("#name", contactForm)?.value?.trim() || "";
+          const email = qs("#email", contactForm)?.value?.trim() || "";
+          const projectType = qs("#projectType", contactForm)?.value?.trim() || "";
+          const message = qs("#message", contactForm)?.value?.trim() || "";
+
+          const subject = encodeURIComponent(
+            `New portfolio inquiry${projectType ? ` (${projectType})` : ""}`
+          );
+          const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\nProject type: ${projectType}\n\n${message}`
+          );
+
+          window.location.href = `mailto:hello@veunestudio.com?subject=${subject}&body=${body}`;
+
+          if (statusEl) {
+            statusEl.textContent = "Opening your email app to send the message…";
+            statusEl.classList.add("contact-form__status--success");
+          }
+
+          contactForm.reset();
+          return;
+        }
+
+        const formData = new FormData(contactForm);
+        const response = await fetch(endpoint, {
+          method,
+          headers: { Accept: "application/json" },
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Request failed: ${response.status}`);
+        }
+
+        if (statusEl) {
+          statusEl.textContent =
+            "Message sent! Thank you for reaching out — Vanessa will reply soon.";
+          statusEl.classList.add("contact-form__status--success");
+        }
+
+        contactForm.reset();
+      } catch (error) {
+        if (statusEl) {
+          statusEl.textContent =
+            "Sorry — the form couldn’t send. Please try again or email hello@veunestudio.com.";
+          statusEl.classList.add("contact-form__status--error");
+        }
+      } finally {
+        submitButton?.removeAttribute("disabled");
+      }
     });
   };
 
